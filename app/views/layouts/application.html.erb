@@ -17,7 +17,8 @@
     <div class="container-fluid">
       <ul class="nav navbar-nav">
         <% if current_user %>
-        <li>  Logged in as <%= current_user.email %> </li>
+        <a class="navbar-brand">  Logged in as <%= current_user.email %> </a>
+        <li>  <%= link_to "Home", articles_path %> </li>
         <li>  <%= link_to "Log out", log_out_path %></li>
         <% else %>
         <li>  <%= link_to "Sign up", sign_up_path %> </li>
@@ -30,6 +31,19 @@
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
 <%= yield %>
-
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our Partners</a></li>
+                    <li><a href="#">User Review</a></li>
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
