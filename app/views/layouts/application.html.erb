@@ -27,10 +27,11 @@
       </ul>
 </div>
 </nav>
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
+
+
+
 <%= yield %>
+
 <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container">
             <div class="navbar-collapse collapse" id="footer-body">

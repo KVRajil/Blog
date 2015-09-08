@@ -1,37 +1,50 @@
-<html>
-  <head>
-    <title>Login page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <style type="text/css">
-      .error_messages{
-        color:red;
-      }
-      .container{
-        width: 500px;
-        border-style:outset;
-        margin-top: 100px;
-      }
-    </style>
-  </head>
-  <body>
-     <div class="container">
-        <h1>Log in</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"> <strong class="">Login</strong>
 
-        <%= form_tag sessions_path do %>
-          <p>
-            <%= label_tag :email %><br />
-            <%= text_field_tag :email, params[:email] , class:"form-control"%>
-          </p>
-          <p>
-            <%= label_tag :password %><br />
-            <%= password_field_tag :password %>
-          </p>
-          <p class="button"><%= submit_tag "Log in" ,  class:"btn btn-primary"%></p>
-        <% end %>
+                </div>
+                <%= form_tag sessions_path do %>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <% flash.each do |name, msg| %>
+                            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                          <% end %>
+                          <br>
+                            <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-9">
+                                <%= text_field_tag :email, params[:email] , class:"form-control"%>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-9">
+                                <%= password_field_tag :password, nil, class:"form-control" %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <div class="checkbox">
+                                    <label class="">
+                                        <input type="checkbox" class="">Remember me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group last">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <%= submit_tag "Log in" , class:"btn btn-default btn-sm" %>
+                                <button type="reset" class="btn btn-default btn-sm">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <% end %>
+                <div class="panel-footer">Not Registered? <a href="sign_up" class="">Register here</a>
+                </div>
+            </div>
         </div>
-      <body>
-  </html>
+    </div>
+</div>
