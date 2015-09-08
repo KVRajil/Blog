@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Login page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      .error_messages{
+        color:red;
+      }
+      .container{
+        width: 500px;
+        border-style:outset;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+     <div class="container">
+        <h1>Log in</h1>
+
+        <%= form_tag sessions_path do %>
+          <p>
+            <%= label_tag :email %><br />
+            <%= text_field_tag :email, params[:email] , class:"form-control"%>
+          </p>
+          <p>
+            <%= label_tag :password %><br />
+            <%= password_field_tag :password %>
+          </p>
+          <p class="button"><%= submit_tag "Log in" ,  class:"btn btn-primary"%></p>
+        <% end %>
+        </div>
+      <body>
+  </html>
