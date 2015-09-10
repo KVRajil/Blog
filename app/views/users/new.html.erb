@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
-                <div class="panel-heading"> <strong class="">Login</strong>
+                <div class="panel-heading"> <strong class="">Sign up</strong>
 
                 </div>
                 <%= form_for @user do |f| %>
@@ -19,30 +19,34 @@
                             </ul>
                           </div>
                         <% end %>
-                        <br>
+                        <br><br>
                           <label for="inputEmail3" class="col-sm-3 control-label">Username</label>
                           <div class="col-sm-9">
                             <%= f.text_field :username , class:"form-control"%>
                           </div>
                       </div>
+                      <br><br>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
                               <%= f.text_field :email , class:"form-control" %>
                             </div>
                         </div>
+                        <br><br>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                             <div class="col-sm-9">
                                 <%= f.password_field :password , class:"form-control"%>
                             </div>
                         </div>
+                        <br><br>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Password confirm</label>
                             <div class="col-sm-9">
                                 <%= f.password_field :password_confirmation , class:"form-control"%>
                             </div>
                         </div>
+                        <br>
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-9">
                                 <div class="checkbox">
@@ -51,6 +55,7 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
                         <div class="form-group last">
                             <div class="col-sm-offset-3 col-sm-9">
                                 <%= f.submit class:"btn btn-default btn-sm"%>

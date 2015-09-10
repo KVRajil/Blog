@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   def index
       if current_user
-        @articles = Article.all
+        @articles = Article.paginate(:page => params[:page], :per_page => 3)
       else
         redirect_to root_url
       end
@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   def show
     if current_user
       @article = Article.find(params[:id])
+      @user = User.find(@article.user_id)
     else
       redirect_to root_url
     end

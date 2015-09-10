@@ -12,7 +12,8 @@
 
 <div class="container">
   <h2><%= @article.title %></h2>
-
+  
+  author : <%=@user.email%> <br>last update on : <%=localize(@article.updated_at, :format => :long)%>
 <p>
 <pre>
   <%= @article.text %>

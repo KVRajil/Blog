@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <nav class="navbar navbar-inverse">
@@ -18,7 +19,8 @@
       <ul class="nav navbar-nav">
         <% if current_user %>
         <a class="navbar-brand">  Logged in as <%= current_user.email %> </a>
-        <li>  <%= link_to "Home", articles_path %> </li>
+        <li>  <%= link_to "Articles", articles_path %> </li>
+        <li>  <%= link_to "New article", new_article_path %> </li>
         <li>  <%= link_to "Log out", log_out_path %></li>
         <% else %>
         <li>  <%= link_to "Sign up", sign_up_path %> </li>
